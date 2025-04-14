@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <time.h>
 
 int main()
 {
     // Variables
+    char Play = 'Y';
     int guess;
     int random;
     int count = 1;
@@ -16,9 +18,10 @@ int main()
 
     printf("\t====== Welcome to Number gussing game ======\n\n");
 
+    
+do{
+    here: // Lebel for goto function
     printf("Enter a number between 1 to 100: ");
-
-here: // Label for goto function
     scanf("%d", &guess);
     if (guess < random)
     {
@@ -34,9 +37,14 @@ here: // Label for goto function
     }
     else
     {
-        printf("\n\t+++ Congrats you got the number in %d try +++\n\n", count);
-        printf("Thanks for Playing\n@ Developed by Krishna Gorai\n");
+        printf("\n\t+++ Congrats you got the number in %d try +++\n", count);
+        printf("Do you want to play more[y/n]? ");
+        scanf("%c", &Play);
+        while (getchar() != '\n');  // Protect buffer overflow
+        Play = toupper(Play);
     }
+}while(Play == 'Y');
 
+    printf("\nThanks for Playing\n@ Developed by Krishna Gorai\n");
     return 0;
 }
