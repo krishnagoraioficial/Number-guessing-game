@@ -34,8 +34,8 @@ here: // Label for goto function
     }
     else
     {
-        printf("\t+++ Congrats you got the number in %d try +++\n", count);
-        printf("\n\n\tThank you for using this\n\t Developed by Krishna Gorai\n");
+        printf("\n\t+++ Congrats you got the number in %d try +++\n\n", count);
+        printf("Thanks for Playing\n@ Developed by Krishna Gorai\n");
     }
 
     return 0;
